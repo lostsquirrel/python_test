@@ -15,3 +15,9 @@ class TestLec4(unittest.TestCase):
 
     def test_3legs_2heads(self):
         self.assertEqual(solve(3, 2), (None, None))
+
+    def test_is_palindrome(self):
+        self.assertTrue(is_palindrome('abcdcba'))
+
+    def test_is_palindrome_not(self):
+        self.assertFalse(is_palindrome('abab'))
