@@ -32,13 +32,13 @@ class CompassPt(object):
 
     def move(self, dist):
         if self.pt == 'N':
-            return (0, dist)
+            return 0, dist
         elif self.pt == 'S':
-            return (0, -dist)
+            return 0, -dist
         elif self.pt == 'E':
-            return (dist, 0)
+            return dist, 0
         elif self.pt == 'W':
-            return (-dist, 0)
+            return -dist, 0
         else:
             raise ValueError('in CompassPt.move')
 
@@ -98,18 +98,17 @@ def ans_quest(max_time, num_trials):
     means = []
     dist_lists = perform_sim(max_time, num_trials)
     for t in range(max_time + 1):
-        # print t
         tot = 0.0
         for distL in dist_lists:
             tot += distL[t]
-        # print tot
         means.append(tot / len(dist_lists))
-    # pylab.figure()
+    pylab.figure()
     pylab.plot(means)
     pylab.ylabel('distance')
     pylab.xlabel('time')
     pylab.title('Average Distance vs. Time (' + str(len(dist_lists)) + ' trials)')
     pylab.show()
+
 
 if __name__ == '__main__':
     ans_quest(500, 500)
