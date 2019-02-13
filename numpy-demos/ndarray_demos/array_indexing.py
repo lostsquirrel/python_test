@@ -46,6 +46,17 @@ class ArrayIndexingTests(unittest.TestCase):
         # Examine the pairings of row_indices and col_indices.  These are the elements we'll change next.
         for x in zip(row_indices, col_indices, [1, 2, 3, 4]):
             print(x)
+        # Change one element from each row using the indices selected
+        an_array[row_indices, col_indices] += 100000
+
+        print('\nChanged Array:')
+        print(an_array)
+
+        
+    def test_zip(self):
+        col_indices = np.array([0, 1, 2, 0])
+        row_indices = np.arange(4)
+
         for row, col in zip(row_indices, col_indices):
             print(row, ", ", col)
 
