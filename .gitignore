@@ -3,6 +3,6 @@
 .pydevproject
 .project
 *.data
-/.idea/
+**/.idea/
 /venv/
 others/ali_access_key.conf
