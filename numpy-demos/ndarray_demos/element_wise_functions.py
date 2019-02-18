@@ -66,8 +66,8 @@ class ElementWiseFunctions(unittest.TestCase):
         print(M)
         print(np.vstack((K, M)))
 
-        print(np.hstack((K,M)))
+        print(np.hstack((K, M)))
 
-        print(np.concatenate([K, M], axis = 0))
+        print(np.concatenate([K, M], axis=0))
 
-        print(np.concatenate([K, M.T], axis = 1))
+        print(np.concatenate([K, M.T], axis=1))
