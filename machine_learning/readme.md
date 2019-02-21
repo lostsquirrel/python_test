@@ -38,3 +38,52 @@ https://drive.google.com/open?id=0B8iiZ7pSaSFZb3ItQ1l4LWRMTjg
 - rain_accumulation: amount of accumulated rain measured at the timestamp (Unit: millimeters)
 - rain_duration: length of time rain has fallen as measured at the timestamp (Unit: seconds)
 - relative_humidity: relative humidity measured at the timestamp (Unit: percent)
+
+
+## regression
+
+### soccer data
+
+
+- id
+- player_fifa_api_id:  FIFA ID
+- player_api_id:  API Id for player
+- date:  Date of match
+- overall_rating: Rating
+- potential: Potential rating
+- preferred_foot: Left or Right foot
+- attacking_work_rate: Attacking rate
+- defensive_work_rate: Defensive rate
+- crossing: FIFA rating for crossing
+- finishing: FIFA rating for finishing
+- heading_accuracy: FIFA rating for heading accuracy
+- short_passing: FIFA rating for short passes
+- volleys: FIFA rating for handling volleys
+- dribbling: FIFA rating for dribbling
+- curve: FIFA rating for curves
+- free_kick_accuracy: FIFA rating for free kick accuracy
+- long_passing: FIFA rating for long passes
+- ball_control: FIFA rating for ball control
+- acceleration: FIFA rating for player acceleration
+- sprint_speed: FIFA rating for sprint speed
+- agility: FIFA rating for player agility
+- reactions: FIFA rating for reactions
+- balance: FIFA rating for player balance
+- shot_power: FIFA rating for shot power
+- jumping: FIFA rating for jumping
+- stamina
+- strength
+- long_shots
+- aggression
+- interceptions
+- positioning
+- vision: FIFAs rating on ability to see own players on field. If vision is low, it does not matter how good long passing is
+- penalties: FIFAs rating for accuracy of shots from inside penalty area
+- marking
+- standing_tackle
+- sliding_tackle
+- gk_diving: FIFA rating for goal keeper diving
+- gk_handling: FIFA rating for goal keeper handling
+- gk_kicking: FIFA rating for goal keeper kicking
+- gk_positioning
+- gk_reflexes
