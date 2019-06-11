@@ -13,3 +13,7 @@ class PathTests(unittest.TestCase):
 
     def test_current_file(self):
         print(os.path.realpath(__file__))
+
+
+if __name__ == '__main__':
+    unittest.main()
