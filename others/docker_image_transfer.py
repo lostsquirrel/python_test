@@ -1,17 +1,25 @@
-# /usr/bin/python
+# /usr/bin/python3
 # -*- coding:utf-8 -*-
 """
 get images in vps and transfer to aliyun registry
 """
+import logging
 import os
 import sys
-import logging
 
 log = logging.getLogger(__name__)
 
 aliyun_registry_url = 'registry.cn-hangzhou.aliyuncs.com'
 aliyun_registry_namespace = '/lisong'
-local_registry_url = 'registry.lisong.pub:5000'
+local_registry_url = 'registry.lisong.pub:28500'
+local_registry_namespace = '/sunrise'
+
+
+class TransferConfig:
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.config_keys = ("source", "target", "need_push", "need_hash")
 
 
 class DockerImageTransfer:
@@ -57,6 +65,8 @@ class DockerImageTransfer:
                               self.registry_namespace.replace("/", "-"))
 
     def get_local_image(self):
+        if len(self.registry_namespace) == 0:
+            self.registry_namespace = local_registry_namespace
         return '%s%s/%s' % (local_registry_url, self.registry_namespace, self.tagged_image_name)
 
     def parse_image(self):
@@ -123,7 +133,9 @@ if __name__ == '__main__':
     # 11 multiply images pass by images.txt  pull from aliyun and tag to origin
     # 12 isdirect multiply images pass by images.txt  pull from aliyun and tag to local
     #
-
+    action = int(args[1])
+    registry_namespace = "/lisong"
+    isDirect = False
     if len(args) == 1:
         help_message = '''
         1. single image process
@@ -141,9 +153,7 @@ if __name__ == '__main__':
         '''
         print(help_message)
         sys.exit(0)
-    action = int(args[1])
-    registry_namespace = "/lisong"
-    isDirect = False
+
     if action < 10:
         if len(args) > 3:
             isDirect = True
