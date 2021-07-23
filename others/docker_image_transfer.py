@@ -15,11 +15,52 @@ local_registry_url = 'registry.lisong.pub:28500'
 local_registry_namespace = '/sunrise'
 
 
-class TransferConfig:
+class TransferConfig(dict):
 
     def __init__(self) -> None:
         super().__init__()
-        self.config_keys = ("source", "target", "need_push", "need_hash")
+        self.config_keys = self.keys()
+        self.source = None
+        self.target = None
+        self.needs_push = False
+        self.needs_hash = False
+
+    def __getattr__(self, name):
+        try:
+            return self[name]
+        except KeyError:
+            raise AttributeError(name)
+
+    def __setattr__(self, name, value):
+        self[name] = value
+
+    def load_cmd_args(self, cmd_args: list):
+        if len(cmd_args) == 0:
+            return
+
+        x = cmd_args.pop()
+        if x.startswith("-"):
+            _x = x[1:]
+            if _x in self.config_keys:
+                if type(self[_x]) != type(bool):
+                    if len(cmd_args) > 0:
+                        y = cmd_args.pop()
+                        self[_x] = y
+                    else:
+                        raise AttributeError(f"property {_x} value not set")
+                else:
+                    if len(cmd_args) > 0:
+                        if not cmd_args[0].startswith("-"):
+                            y = cmd_args.pop()
+                            if y != "1" or y != "true":
+                                raise AttributeError(f"boolean property {_x} cannot accept none bool value {y}")
+                            else:
+                                self[_x] = True
+
+            else:
+                log.error(f'unknown key {_x}')
+
+        self.load_cmd_args(cmd_args)
 
 
 class DockerImageTransfer:
@@ -126,6 +167,8 @@ def tag_image(source_image, target_image):
 
 if __name__ == '__main__':
     args = sys.argv
+    config = TransferConfig()
+    config.load_cmd_args(args)
     # 0 single image pass by arg tag and push to aliyun
     # 1 single image pass by arg pull from aliyun and tag to origin
     # 2 single image pass by arg pull from aliyun and tag to local
@@ -133,32 +176,32 @@ if __name__ == '__main__':
     # 11 multiply images pass by images.txt  pull from aliyun and tag to origin
     # 12 isdirect multiply images pass by images.txt  pull from aliyun and tag to local
     #
-    action = int(args[1])
-    registry_namespace = "/lisong"
-    isDirect = False
-    if len(args) == 1:
-        help_message = '''
-        1. single image process
-        python docker_image_transfer.py <action> <image> <isDirect>
-        action:
-            0 single image pass by arg tag and push to aliyun
-            1 single image pass by arg pull from aliyun and tag to origin
-            2 single image pass by arg pull from aliyun and tag to local
-        2. multiply images process
-        python docker_image_transfer.py <action> <isDirect>
-        action: 
-            10 multiply images pass by images.txt tag and push to aliyun
-            11 multiply images pass by images.txt  pull from aliyun and tag to origin
-            12 isdirect multiply images pass by images.txt  pull from aliyun and tag to local
-        '''
-        print(help_message)
-        sys.exit(0)
-
-    if action < 10:
-        if len(args) > 3:
-            isDirect = True
-        DockerImageTransfer(args[2].strip('\n'), isDirect).transfer_single(action)
-    else:
-        if len(args) > 2:
-            isDirect = True
-        transfer_multiply(action, isDirect)
+    # action = int(args[1])
+    # registry_namespace = "/lisong"
+    # isDirect = False
+    # if len(args) == 1:
+    #     help_message = '''
+    #     1. single image process
+    #     python docker_image_transfer.py <action> <image> <isDirect>
+    #     action:
+    #         0 single image pass by arg tag and push to aliyun
+    #         1 single image pass by arg pull from aliyun and tag to origin
+    #         2 single image pass by arg pull from aliyun and tag to local
+    #     2. multiply images process
+    #     python docker_image_transfer.py <action> <isDirect>
+    #     action:
+    #         10 multiply images pass by images.txt tag and push to aliyun
+    #         11 multiply images pass by images.txt  pull from aliyun and tag to origin
+    #         12 isdirect multiply images pass by images.txt  pull from aliyun and tag to local
+    #     '''
+    #     print(help_message)
+    #     sys.exit(0)
+    #
+    # if action < 10:
+    #     if len(args) > 3:
+    #         isDirect = True
+    #     DockerImageTransfer(args[2].strip('\n'), isDirect).transfer_single(action)
+    # else:
+    #     if len(args) > 2:
+    #         isDirect = True
+    #     transfer_multiply(action, isDirect)

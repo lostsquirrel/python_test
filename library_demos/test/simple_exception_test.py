@@ -1,6 +1,6 @@
 import unittest
 
-from docs.test.toy_math import divide
+from library_demos.test.toy_math import divide
 
 
 class MyTestCase(unittest.TestCase):

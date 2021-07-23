@@ -3,7 +3,7 @@
 basic of unittest
 """
 import unittest
-from docs.test.toy_math import add
+from library_demos.test.toy_math import add
 
 
 class AddTestCase(unittest.TestCase):
