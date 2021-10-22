@@ -17,12 +17,12 @@ def checkio(text):
 				upper_count = text.count(letter.upper())
 
 			key = lower_count + upper_count
-			if tmp.has_key(key) :
+			if key in tmp :
 				tmp[key].add(letter.lower())
 			else :
 				tmp[key] = set(letter.lower())
 	# print tmp
-	keys = tmp.keys();
+	keys = list(tmp.keys());
 	keys.sort()
 
 	most = tmp[keys[len(keys) - 1]]
@@ -34,9 +34,9 @@ def checkio(text):
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
-	assert checkio(u"Hello World!") == "l", "Hello test"
-	assert checkio(u"How do you do?") == "o", "O is most wanted"
-	assert checkio(u"One") == "e", "All letter only once."
+	assert checkio("Hello World!") == "l", "Hello test"
+	assert checkio("How do you do?") == "o", "O is most wanted"
+	assert checkio("One") == "e", "All letter only once."
 
 
 '''

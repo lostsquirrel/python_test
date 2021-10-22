@@ -91,11 +91,11 @@ class Friends:
     def add(self, connection):
         def add_item(key, value):
             flag = True
-            print key, value
+            print(key, value)
             if key in self.network:
                 names = self.network.get(key)
 
-                print value, names
+                print(value, names)
                 if value in names:
                     flag = False
                 else:
@@ -135,7 +135,7 @@ class Friends:
 
     def names(self):
 
-        names = self.network.keys()
+        names = list(self.network.keys())
         # print type(names), names
         return set(names)
 
@@ -163,8 +163,8 @@ if __name__ == '__main__':
     # assert letter_friends.connected("d") == set(), "Non connected name"
     # assert letter_friends.connected("a") == {"b", "c"}, "Connected name"
     f = Friends([{"And", "Or"}, {"For", "And"}])
-    print f.network
-    print f.add({"Or", "And"})
+    print(f.network)
+    print(f.add({"Or", "And"}))
 
 '''
 class Friends():

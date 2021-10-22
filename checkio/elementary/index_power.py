@@ -22,8 +22,8 @@ def index_power(array, n):
         base = array[n]
         if base != None:
             return base ** n
-    except IndexError, e:
-        print e
+    except IndexError as e:
+        print(e)
         
     return -1
 

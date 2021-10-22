@@ -21,7 +21,7 @@ def checkio(data):
 
 #This code using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
-    print(checkio([
+    print((checkio([
         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
         [1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1],
@@ -33,7 +33,7 @@ if __name__ == '__main__':
         [1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1],
         [1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1],
         [1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1],
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]))
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]])))
     #be careful with infinity loop
     # print(checkio([
     #     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],

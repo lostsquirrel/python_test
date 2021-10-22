@@ -34,12 +34,12 @@ def getP(t):
 
 # These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
-    print checkio(1)
-    print checkio(2)
-    print checkio(3)
-    print checkio(4)
-    print checkio(5)
-    print checkio(10)
+    print(checkio(1))
+    print(checkio(2))
+    print(checkio(3))
+    print(checkio(4))
+    print(checkio(5))
+    print(checkio(10))
 
 # for x in xrange(1,10):
 # print checkio(x)

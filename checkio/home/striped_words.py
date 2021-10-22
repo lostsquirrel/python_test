@@ -46,9 +46,9 @@ def striped(word):
 def checkio(text):
 	count = 0
 	for word in split(text):
-		print word
+		print(word)
 		count += striped(word)
-		print striped(word)
+		print(striped(word))
 	return count
 
 

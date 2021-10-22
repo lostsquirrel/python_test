@@ -131,7 +131,7 @@ class Building:
 if __name__ == '__main__':
     # These "asserts" using only for self-checking and not necessary for auto-testing
     def json_dict(d):
-        return dict((k, list(v)) for k, v in d.items())
+        return dict((k, list(v)) for k, v in list(d.items()))
 
     b = Building(1, 2, 2, 3)
     b2 = Building(1, 2, 2, 3, 5)

@@ -7,11 +7,11 @@ import re
 def checkio(data):
     """Return True if password strong and False if not"""
     return bool(len(data) >= 10 
-                and filter(lambda a:a.isupper(),data) 
-                and filter(lambda a:a.islower(),data) 
-                and filter(lambda a:a.isdigit(),data))
-print 'First ', 'Done' if checkio('A1213pokl')==False else 'wrong'
-print 'Second ', 'Done' if checkio('bAse730onE4')==True else 'wrong'
+                and [a for a in data if a.isupper()] 
+                and [a for a in data if a.islower()] 
+                and [a for a in data if a.isdigit()])
+print('First ', 'Done' if checkio('A1213pokl')==False else 'wrong')
+print('Second ', 'Done' if checkio('bAse730onE4')==True else 'wrong')
 
 # def checkio(data):
 
@@ -40,9 +40,9 @@ print 'Second ', 'Done' if checkio('bAse730onE4')==True else 'wrong'
 # ##
 # These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
-    assert checkio(u'A1213pokl') == False, "1st example"
-    assert checkio(u'bAse730onE4') == True, "2nd example"
-    assert checkio(u'asasasasasasasaas') == False, "3rd example"
-    assert checkio(u'QWERTYqwerty') == False, "4th example"
-    assert checkio(u'123456123456') == False, "5th example"
-    assert checkio(u'QwErTy911poqqqq') == True, "6th example"
+    assert checkio('A1213pokl') == False, "1st example"
+    assert checkio('bAse730onE4') == True, "2nd example"
+    assert checkio('asasasasasasasaas') == False, "3rd example"
+    assert checkio('QWERTYqwerty') == False, "4th example"
+    assert checkio('123456123456') == False, "5th example"
+    assert checkio('QwErTy911poqqqq') == True, "6th example"

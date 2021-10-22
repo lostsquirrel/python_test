@@ -18,7 +18,7 @@ def is_safe(position, pawns):
 
 xx = dict(a = 0, b = 1, c = 2, d = 3, e = 4, f = 5, g = 6, h = 7)
 
-print xxx.index('a')
+print(xxx.index('a'))
 
-print xxx[0]
-print xx.get('a')
+print(xxx[0])
+print(xx.get('a'))

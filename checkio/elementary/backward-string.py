@@ -10,7 +10,7 @@ def backward_string(val: str) -> str:
 
 if __name__ == '__main__':
     print("Example:")
-    print(backward_string('val'))
+    print((backward_string('val')))
 
     # These "asserts" are used for self-checking and not for an auto-testing
     assert backward_string('val') == 'lav'

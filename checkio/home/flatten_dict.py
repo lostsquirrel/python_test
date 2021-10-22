@@ -10,10 +10,10 @@ def flatten(dictionary):
     result = {}
     while stack:
         path, current = stack.pop()
-        for k, v in current.items():
+        for k, v in list(current.items()):
             if isinstance(v, dict):
                 stack.append((path + (k,), v))
-                if len(v.keys()) == 0:
+                if len(list(v.keys())) == 0:
                     result["/".join((path + (k,)))] = ""
                 #                 print stack
                 #                 print path

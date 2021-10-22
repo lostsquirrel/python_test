@@ -43,7 +43,7 @@ def checkio(data):
 			data -= 10 * c
 		if data > 0:
 			tmp.append(base[data])
-	print tmp
+	print(tmp)
 	return ''.join(tmp)
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
