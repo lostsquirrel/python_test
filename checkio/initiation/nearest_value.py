@@ -1,8 +1,22 @@
 def nearest_value(values: set, one: int) -> int:
     # your code here
-    def binary_search(start: int, end: int) -> int:
-        return None
-    return None
+    current = None
+    marker = None
+    for x in values:
+        if x == one:
+            return x
+        if marker is None:
+            marker = abs(one - x)
+            current = x
+        else:
+            _marker = abs(one - x)
+            if _marker < marker:
+                marker = _marker
+                current = x
+            elif _marker == marker:
+                if x < current:
+                    current = x
+    return current
 
 
 if __name__ == '__main__':
