@@ -1,4 +1,4 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 import unittest
 from generator_test import (generator_function, fibon, generator, averager, odds, odd_even, odd_even_x)
 
