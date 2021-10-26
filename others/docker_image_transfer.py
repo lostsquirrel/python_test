@@ -16,6 +16,7 @@ logging.basicConfig(level=logging.INFO)
 aliyun_registry_url = 'registry.cn-hangzhou.aliyuncs.com'
 aliyun_registry_namespace = '/lisong'
 local_registry_url = 'registry.lisong.pub:28500'
+<<<<<<< Updated upstream
 local_registry_namespace = '/sunrise'
 acceptable_boolean = ("1", "true", 'yes', 'YES', 'y', 'Y')
 """
@@ -175,6 +176,8 @@ class DockerImage(GeneralObject):
             self.namespace = _image[1]
         elif _size > 3:
             self.namespace = '{}'.format("/".join(_image[1:-1]))
+=======
+>>>>>>> Stashed changes
 
 
 class DockerImageTransfer:

@@ -90,8 +90,9 @@ def getPingbyIp(ip):
 
 
 if __name__ == "__main__":
-    print_version2()
+    pass
+#     printVersion2()
 #     qlString = "CREATE TABLE server_list(id INTEGER PRIMARY KEY AUTOINCREMENT, area TEXT, name TEXT, ip TEXT, protocol TEXT, create_time REAL, status INT)"
 #     crateTable(db, qlString)
-#     insert('220.181.111.86', 54, 39.3, time.time())    
+#     insert('220.181.111.86', 54, 39.3, time.time())
 #     print time.time()
