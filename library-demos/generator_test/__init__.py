@@ -1,4 +1,4 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 def generator_function():
     for i in range(10):
         yield i
