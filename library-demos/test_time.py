@@ -1,9 +1,9 @@
 # -*- coding:utf-8 -*-
-'''
+"""
 Created on Feb 3, 2015
 
 @author: lisong
-'''
+"""
 import time
 
 '''
@@ -30,19 +30,24 @@ import time
 %Z    Time zone name (no characters if no time zone exists).     
 %%    A literal '%' character.
 '''
+
+
 def get_current_timestamp():
     return int(time.time() * 1000 * 1000)
 
-def time2str(pattern = '%Y-%m-%d'):
+
+def time2str(pattern='%Y-%m-%d'):
     return time.strftime(pattern)
 
-def str2time(date_str, pattern = "%Y-%m-%d"):
+
+def str2time(date_str, pattern="%Y-%m-%d"):
     return time.strptime(date_str, pattern)
 
+
 if __name__ == '__main__':
-    print time2str()
-    print time2str('%Y-%m-%d %H:%M:%S' )
-    print str2time('2000-10-05')
+    print(time2str())
+    print(time2str('%Y-%m-%d %H:%M:%S'))
+    print(str2time('2000-10-05'))
     '''
     for x in range(100):
         a = get_current_timestamp()
