@@ -4,6 +4,7 @@
 .project
 *.data
 **/.idea/
+**/.vscode/
 /venv/
 
 **/.vscode
