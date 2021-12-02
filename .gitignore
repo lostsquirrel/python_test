@@ -4,5 +4,6 @@
 .project
 *.data
 **/.idea/
+**/.vscode/
 /venv/
 others/ali_access_key.conf
