@@ -4,17 +4,17 @@ class Log:
 		def __method(*args):
 			
 			handler = args[0]
-			print handler.arg
+			print(handler.arg)
 		return __method
 
 class ClassName():
-  	"""docstring for ClassName"""
-  	def __init__(self, arg):
-  		self.arg = arg
-  		
-  	@Log()
-  	def xx(self):
-  		print 'hahaha'
+	"""docstring for ClassName"""
+	def __init__(self, arg):
+		self.arg = arg
+
+	@Log()
+	def xx(self):
+		print('hahaha')
 
 if __name__ == "__main__":
 	xx = ClassName(123)

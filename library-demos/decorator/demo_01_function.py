@@ -8,4 +8,4 @@ Created on Dec 25, 2014
 def foo():
     return 1
 
-print foo()
+print(foo())

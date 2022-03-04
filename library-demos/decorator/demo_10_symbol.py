@@ -38,8 +38,8 @@ one = Coordinate(100, 200)
 two = Coordinate(300, 200)
 three = Coordinate(-100, -100)
 
-print  sub(one, two)
-print add(one, three)
+print(sub(one, two))
+print(add(one, three))
 #########before######
 # Coord: {'y': 0, 'x': -200}
 # Coord: {'y': 100, 'x': 0

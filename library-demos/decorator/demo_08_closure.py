@@ -19,7 +19,7 @@ print foo.func_closure # doctest: +ELLIPSIS
 def outer(x):
     
     def inner():
-        print x
+        print(x)
     return inner
 
 print1 = outer(1)

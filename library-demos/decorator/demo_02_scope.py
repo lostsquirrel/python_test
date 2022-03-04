@@ -9,10 +9,10 @@ Created on Dec 25, 2014
 a_string = "This is a global variable"
 
 def foo():
-    print locals()
+    print(locals())
     
 def bar():
-    print globals()
+    print(globals())
     
 foo()
 bar()

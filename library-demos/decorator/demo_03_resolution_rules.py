@@ -8,7 +8,7 @@ Created on Dec 25, 2014
 a_string = "This is a global variable"
 def foo():
      
-    print a_string 
+    print(a_string) 
     #Python looks for a local variable in our function and
     # not finding one, looks for a global variable[2] of the same name.
     
@@ -16,7 +16,7 @@ foo()
 
 def bar():
     a_string = "test"
-    print locals()
+    print(locals())
     
 bar()
-print a_string
+print(a_string)

@@ -5,7 +5,7 @@ Created on Jan 12, 2015
 '''
 def outer(some_func):
     def inner():
-            print "before some_func"
+            print("before some_func")
             ret = some_func() # 1
             return ret + 1
     return inner
@@ -36,7 +36,7 @@ def sub(a, b):
 one = Coordinate(100, 200)
 two = Coordinate(300, 200)
  
-print add(one, two)
+print(add(one, two))
 
 
 # Coord: {'y': 400, 'x': 400}
@@ -60,8 +60,8 @@ add = wrapper(add)
 sub = wrapper(sub)
 
 three = Coordinate(-100, -100)
-print  sub(one, two)
-print add(one, three)
+print(sub(one, two))
+print(add(one, three))
 # Coord: {'y': 400, 'x': 400}
 # Coord: {'y': 0, 'x': 0}
 # Coord: {'y': 200, 'x': 100}

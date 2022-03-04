@@ -9,8 +9,8 @@ Created on Dec 25, 2014
 def foo():
     pass
 
-print issubclass(foo.__class__, object)
-print foo.__class__
+print(issubclass(foo.__class__, object))
+print(foo.__class__)
 
 def add(x, y):
     return x + y
@@ -24,15 +24,15 @@ def applyx(func, x, y):
 a = 2
 b = 1
 
-print applyx(add, a, b)
-print applyx(sub, a, b)
+print(applyx(add, a, b))
+print(applyx(sub, a, b))
 
 
 def outer():
     def inner():
-        print "Inside inner"
+        print("Inside inner")
     return inner # 1
 
 f = outer() #2
-print f
+print(f)
 f()

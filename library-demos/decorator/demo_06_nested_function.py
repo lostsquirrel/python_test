@@ -9,7 +9,7 @@ Created on Dec 25, 2014
 def outer():
     x = 1
     def inner():
-        print x # 1
+        print(x) # 1
     inner() # 2
     
 outer()
