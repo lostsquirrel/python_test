@@ -15,3 +15,9 @@ class SubprocessTest(unittest.TestCase):
         result = subprocess.run(
             ['ls', '-l'], capture_output=True, text=True).stdout
         print(result)
+
+    def test_tail(self):
+        result = subprocess.run(
+            ['tail', '-f', "/tmp/test"], capture_output=True, text=True).stdout
+        print(result)
+        
