@@ -12,8 +12,12 @@ class CalendarTest(unittest.TestCase):
             print(x)
 
     def test_monthdates(self):
-        for x in c.itermonthdates(2022, 5):
+        dates = c.itermonthdates(2022, 5)
+        i = 0
+        for x in dates:
             print(x, type(x))
+            i += 1
+        print(i)
 
     def test_monthdays(self):
         for x in c.itermonthdates(2022, 5):
