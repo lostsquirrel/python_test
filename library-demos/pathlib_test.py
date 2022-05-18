@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 
 import unittest
-from pathlib import Path
+from pathlib import Path, PurePath
 
 
 class PathLibTests(unittest.TestCase):
@@ -21,6 +21,22 @@ class PathLibTests(unittest.TestCase):
         print(type(cwd))
         self.assertTrue(str(cwd).index("library-demos") != -1)
 
+    def test_glob(self):
+        p = Path('.')
+        for f in p.glob('**/*.py'):
+            print(f)
 
+    def test_resolve(self):
+        p = Path('/etc')
+        q = p / 'init.d' / 'reboot'
+        print(q)
+        print(q.resolve())
+
+    def test_fspath(self):
+        import os
+        p = PurePath('/etc')
+        print(os.fspath(p))
+
+        
 if __name__ == '__main__':
     unittest.main()
