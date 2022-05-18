@@ -1,7 +1,7 @@
 import unittest
-from calendar import Calendar
+from calendar import Calendar, monthrange
 
-c = Calendar()
+c = Calendar(firstweekday=6)
 
 
 class CalendarTest(unittest.TestCase):
@@ -22,3 +22,7 @@ class CalendarTest(unittest.TestCase):
     def test_monthdays(self):
         for x in c.itermonthdates(2022, 5):
             print(x, type(x))
+
+    def test_monthrange(self):
+        for month in range(1, 12):
+            print(month, monthrange(2022, month))
