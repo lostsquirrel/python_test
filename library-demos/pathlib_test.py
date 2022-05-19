@@ -37,6 +37,11 @@ class PathLibTests(unittest.TestCase):
         p = PurePath('/etc')
         print(os.fspath(p))
 
-        
+    def test_file_open(self):
+        fp = Path("/tmp/date")
+        with open(fp) as f:
+            print(f.read())
+
+
 if __name__ == '__main__':
     unittest.main()
