@@ -6,7 +6,7 @@ import unittest
 class HashlibTest(unittest.TestCase):
 
     def test_sha256(self):
-        
+
         m = hashlib.sha256()
         m.update(b"Nobody inspects")
         m.update(b" the spammish repetition")
