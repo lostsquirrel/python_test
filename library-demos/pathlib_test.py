@@ -31,6 +31,7 @@ class PathLibTests(unittest.TestCase):
         q = p / 'init.d' / 'reboot'
         print(q)
         print(q.resolve())
+        print(type(q.resolve()))
 
     def test_fspath(self):
         import os
